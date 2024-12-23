@@ -25,7 +25,7 @@ public class BlacklistController {
     }
 
     @GetMapping(path = "/{cin}")
-    public BlacklistDto getBlacklist(@PathVariable Long cin) {
-        return blacklistService.getBlacklistByCIN(cin);
+    public BlacklistDto getBlacklist(@PathVariable Long clientCIN) {
+        return blacklistService.getBlacklistByClientCIN(clientCIN);
     }
 }

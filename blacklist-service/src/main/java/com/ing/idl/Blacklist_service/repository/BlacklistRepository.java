@@ -8,5 +8,5 @@ import java.util.Optional;
 
 @Repository
 public interface BlacklistRepository extends JpaRepository<BlacklistEntity, Long> {
-    Optional<BlacklistEntity> findByCIN(String CIN);
+    Optional<BlacklistEntity> findByClientCIN(Long clientCIN);
 }

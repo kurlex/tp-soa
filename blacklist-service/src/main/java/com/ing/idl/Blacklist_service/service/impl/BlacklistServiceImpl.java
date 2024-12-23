@@ -20,6 +20,7 @@ public class BlacklistServiceImpl implements BlacklistService {
         this.blacklistMapper = blacklistMapper;
     }
 
+
     @Override
     public BlacklistDto addBlacklist(BlacklistDto blacklistDto) {
         BlacklistEntity blacklistEntity = blacklistMapper.toEntity(blacklistDto);
@@ -29,8 +30,8 @@ public class BlacklistServiceImpl implements BlacklistService {
 
 
     @Override
-    public BlacklistDto getBlacklistByCIN(Long CIN) {
-        Optional<BlacklistEntity> blacklistEntityOptional = blacklistRepository.findByCIN(CIN.toString());
+    public BlacklistDto getBlacklistByClientCIN(Long clientCIN) {
+        Optional<BlacklistEntity> blacklistEntityOptional = blacklistRepository.findByClientCIN(clientCIN);
 
         if (blacklistEntityOptional.isEmpty()) {
             return null;

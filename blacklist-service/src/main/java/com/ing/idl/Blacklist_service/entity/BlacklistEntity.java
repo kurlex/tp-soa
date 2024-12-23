@@ -16,11 +16,5 @@ public class BlacklistEntity {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
-
-    private String name;
-    private String lastname;
-    private String CIN;
-    private Double salary;
-    private Date birthdate;
-    private ContractEnum contract;
+    private Long clientCIN ;
 }
