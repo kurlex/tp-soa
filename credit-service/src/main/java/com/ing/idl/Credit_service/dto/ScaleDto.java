@@ -7,12 +7,11 @@ import lombok.NoArgsConstructor;
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
-public class CreditDto {
+public class ScaleDto {
     private Long id;
-    private Long clientId;
-    private Long scaleId;
-    private Double amount;
-    private Double interest;
-    private Long durationInMonth;
-    private Double monthlyPayment;
+    private Double interestRate;
+    private Long minimumDurationInMonths;
+    private Long maximumDurationInMonths;
+    private Double minimumAmount;
+    private Double maximumAmount;
 }

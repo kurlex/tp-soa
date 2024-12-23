@@ -13,6 +13,6 @@ public class CreditDto {
     private Long scaleId;
     private Double amount;
     private Double interest;
-    private Long durationInMonth;
+    private Long durationInMonths;
     private Double monthlyPayment;
 }

@@ -25,6 +25,7 @@ public class CreditServiceImpl implements CreditService {
     public CreditDto addCredit(CreditEntity creditEntity) {
         CreditEntity credit = creditRepository.save(creditEntity);
         CreditDto creditDto = creditMapper.toDto(credit);
+        creditDto.setDurationInMonths(credit.getDurationInMonths());
         creditDto.setMonthlyPayment(calculateMonthlyPayment(creditDto));
         return creditDto;
     }
@@ -39,6 +40,7 @@ public class CreditServiceImpl implements CreditService {
         }
 
         List<CreditEntity> creditEntities = creditEntityOptional.get();
+        System.out.println(creditEntities);
         List<CreditDto> creditDtos = creditMapper.toDto(creditEntities);
 
         for (CreditDto creditDto : creditDtos) {
@@ -48,13 +50,13 @@ public class CreditServiceImpl implements CreditService {
     }
 
     private Double calculateMonthlyPayment(CreditDto creditDto) {
-        if (creditDto.getDurationInMonth() == 0 || creditDto.getAmount() == null || creditDto.getInterest() == null) {
+        if (creditDto.getDurationInMonths() == 0 || creditDto.getAmount() == null || creditDto.getInterest() == null) {
             return 0.0;
         }
 
         double interestAmount = creditDto.getAmount() * creditDto.getInterest() / 100;
         double totalAmount = creditDto.getAmount() + interestAmount;
-        double months = creditDto.getDurationInMonth();
+        double months = creditDto.getDurationInMonths();
         return totalAmount / months;
     }
 }

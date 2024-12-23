@@ -13,12 +13,12 @@ import java.util.Date;
 @AllArgsConstructor
 @Table(name = "credit")
 public class CreditEntity {
-    public CreditEntity(Long clientId, Long scaleId, Double amount, Double interest, Long durationInDays) {
+    public CreditEntity(Long clientId, Long scaleId, Double amount, Double interest, Long durationInMonths) {
         this.clientId = clientId;
         this.scaleId = scaleId;
         this.amount = amount;
         this.interest = interest;
-        this.durationInDays = durationInDays;
+        this.durationInMonths = durationInMonths;
     }
 
     @Id
@@ -29,5 +29,5 @@ public class CreditEntity {
     private Long scaleId;
     private Double amount;
     private Double interest;
-    private Long durationInDays;
+    private Long durationInMonths;
 }

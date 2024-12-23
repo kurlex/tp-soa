@@ -36,7 +36,7 @@ public class CreditController {
                 creditRequestDto.getClientId(),
                 scaleEntity.getId(),
                 creditRequestDto.getAmount(),
-                scaleEntity.getInterestRate() * creditRequestDto.getAmount(),
+                (scaleEntity.getInterestRate() * creditRequestDto.getAmount())/ 100,
                 creditRequestDto.getDurationInMonths());
         CreditDto creditCreated = creditService.addCredit(creditEntity);
 

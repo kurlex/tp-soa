@@ -1,6 +1,8 @@
 package com.ing.idl.Credit_service.service.impl;
 
+import com.ing.idl.Credit_service.dto.ScaleDto;
 import com.ing.idl.Credit_service.entity.ScaleEntity;
+import com.ing.idl.Credit_service.mapper.impl.ScaleMapper;
 import com.ing.idl.Credit_service.service.ScaleService;
 import com.ing.idl.Credit_service.repository.ScaleRepository;
 
@@ -14,9 +16,11 @@ import java.util.List;
 public class ScaleServiceImpl implements ScaleService {
 
     private final ScaleRepository scaleRepository;
+    private final ScaleMapper scaleMapper;
 
-    public ScaleServiceImpl(ScaleRepository scaleRepository) {
+    public ScaleServiceImpl(ScaleRepository scaleRepository, ScaleMapper scaleMapper) {
         this.scaleRepository = scaleRepository;
+        this.scaleMapper = scaleMapper;
     }
 
     @Override
@@ -39,5 +43,10 @@ public class ScaleServiceImpl implements ScaleService {
         return null;
     }
 
-
+    @Override
+    public ScaleDto addScale(ScaleDto scaleDto){
+        ScaleEntity scaleEntity = this.scaleMapper.toEntity(scaleDto);
+        scaleEntity = scaleRepository.save(scaleEntity);
+        return scaleMapper.toDto(scaleEntity);
+    }
 }
