@@ -1,4 +1,4 @@
-package com.ing.idl.Blacklist_service.dto;
+package com.ing.idl.BCT_service.dto;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;

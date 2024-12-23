@@ -33,7 +33,7 @@ public class CreditServiceImpl implements CreditService {
 
     @Override
     public List<CreditDto> getCreditByClientId(Long clientId) {
-        Optional<List<CreditEntity>> creditEntityOptional = creditRepository.findByClientId(clientId);
+        Optional<List<CreditEntity>> creditEntityOptional = creditRepository.findByCIN(clientId);
 
         if (creditEntityOptional.isEmpty()) {
             return null;

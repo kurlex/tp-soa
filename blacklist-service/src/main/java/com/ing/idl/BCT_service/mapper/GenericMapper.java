@@ -1,4 +1,4 @@
-package com.ing.idl.Blacklist_service.mapper;
+package com.ing.idl.BCT_service.mapper;
 
 import java.util.List;
 

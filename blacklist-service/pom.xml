@@ -9,10 +9,10 @@
 		<relativePath/> <!-- lookup parent from repository -->
 	</parent>
 	<groupId>com.ing.idl</groupId>
-	<artifactId>Blacklist-service</artifactId>
+	<artifactId>BCT-service</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
-	<name>Blacklist-service</name>
-	<description>blacklist service</description>
+	<name>BCT-service</name>
+	<description>bct service</description>
 	<url/>
 	<licenses>
 		<license/>

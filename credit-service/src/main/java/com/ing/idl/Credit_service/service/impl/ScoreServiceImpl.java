@@ -23,7 +23,7 @@ import java.util.List;
 public class ScoreServiceImpl implements ScoreService {
     @Override
     public ScoreDto getScore(ScoreRequestDto scoreRequestDto) {
-        String url = "http://localhost:8003/scores/";
+        String url = "http://localhost:8003/scores";
         RestTemplate restTemplate = new RestTemplate();
 
         try {

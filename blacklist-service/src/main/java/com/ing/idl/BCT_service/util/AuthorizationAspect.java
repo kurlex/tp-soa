@@ -1,4 +1,4 @@
-package com.ing.idl.Blacklist_service.util;
+package com.ing.idl.BCT_service.util;
 
 import lombok.Data;
 import org.aspectj.lang.annotation.Aspect;
@@ -16,8 +16,8 @@ public class AuthorizationAspect {
     @Before("@annotation(checkAuthorization)")
     public void AuthorizationCheck(CheckAuthorization checkAuthorization) {
         String myIp = getMyIp();
-        if (Arrays.asList(checkAuthorization.blacklistedIps()).contains(myIp)) {
-            throw new RuntimeException("Access denied: IP is blacklisted");
+        if (Arrays.asList(checkAuthorization.bctedIps()).contains(myIp)) {
+            throw new RuntimeException("Access denied: IP is bcted");
         }
 
         String country = getCountryByIp(myIp);

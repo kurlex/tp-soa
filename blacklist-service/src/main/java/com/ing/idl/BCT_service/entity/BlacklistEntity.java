@@ -1,4 +1,4 @@
-package com.ing.idl.Blacklist_service.entity;
+package com.ing.idl.BCT_service.entity;
 
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
@@ -11,7 +11,7 @@ import java.util.Date;
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
-@Table(name = "blacklist")
+@Table
 public class BlacklistEntity {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)

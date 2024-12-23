@@ -2,6 +2,7 @@ package com.ing.idl.Score_service.controller;
 
 import com.ing.idl.Score_service.dto.*;
 import com.ing.idl.Score_service.entity.ScoreEntity;
+import com.ing.idl.Score_service.service.BCTService;
 import com.ing.idl.Score_service.service.ClientService;
 import com.ing.idl.Score_service.service.DecisionService;
 import com.ing.idl.Score_service.service.ScoreService;
@@ -15,17 +16,23 @@ public class ScoreController {
     private final ClientService clientService;
     private final ScoreService scoreService;
     private final DecisionService decisionService;
+    private final BCTService bctService;
 
-    public ScoreController(ClientService clientService, ScoreService scoreService, DecisionService decisionService) {
+    public ScoreController(ClientService clientService, ScoreService scoreService, DecisionService decisionService, BCTService bctService) {
         this.clientService = clientService;
         this.scoreService = scoreService;
         this.decisionService = decisionService;
+        this.bctService = bctService;
     }
 
     @PostMapping
     public ResponseEntity<ApiResponse<ScoreDto>> createScore(@RequestBody ScoreRequestDto scoreRequestDto) {
         ClientDto client = clientService.getClientById(scoreRequestDto.getCIN());
-        int score = scoreService.computeScore(client.getSalary(), client.getContract(), scoreRequestDto.getMonthlyPayment());
+
+        int score = bctService.checkClient(new BlacklistRequestDto(scoreRequestDto.getCIN()))
+                ? 0
+                : scoreService.computeScore(client.getSalary(), client.getContract(), scoreRequestDto.getMonthlyPayment());
+
         ScoreEntity scoreEntity = new ScoreEntity(scoreRequestDto.getCreditId(), score);
         ScoreDto scoreDto = scoreService.addScore(scoreEntity);
         DecisionRequestDto decisionRequestDto = new DecisionRequestDto(
