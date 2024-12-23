@@ -14,6 +14,7 @@ public class ScaleEntity {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
+    @Column(nullable = false, unique = true)
     private Double interestRate;
     private Long minimumDurationInMonths;
     private Long maximumDurationInMonths;

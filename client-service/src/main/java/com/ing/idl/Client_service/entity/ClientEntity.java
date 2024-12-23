@@ -19,7 +19,10 @@ public class ClientEntity {
 
     private String name;
     private String lastname;
+
+    @Column(name = "cin", nullable = false, unique = true)
     private String CIN;
+
     private Double salary;
     private Date birthdate;
     private ContractEnum contract;

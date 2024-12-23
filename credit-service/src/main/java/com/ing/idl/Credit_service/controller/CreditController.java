@@ -3,10 +3,12 @@ package com.ing.idl.Credit_service.controller;
 import com.ing.idl.Credit_service.dto.ApiResponse;
 import com.ing.idl.Credit_service.dto.CreditDto;
 import com.ing.idl.Credit_service.dto.CreditRequestDto;
+import com.ing.idl.Credit_service.dto.ScoreRequestDto;
 import com.ing.idl.Credit_service.entity.CreditEntity;
 import com.ing.idl.Credit_service.entity.ScaleEntity;
 import com.ing.idl.Credit_service.service.CreditService;
 import com.ing.idl.Credit_service.service.ScaleService;
+import com.ing.idl.Credit_service.service.ScoreService;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
@@ -18,10 +20,12 @@ import java.util.List;
 public class CreditController {
     private final CreditService creditService;
     private final ScaleService scaleService;
+    private final ScoreService scoreService;
 
-    public CreditController(CreditService creditService, ScaleService scaleService) {
+    public CreditController(CreditService creditService, ScaleService scaleService, ScoreService scoreService) {
         this.creditService = creditService;
         this.scaleService = scaleService;
+        this.scoreService = scoreService;
     }
 
     @PostMapping
@@ -33,13 +37,19 @@ public class CreditController {
 
         }
         CreditEntity creditEntity = new CreditEntity(
-                creditRequestDto.getClientId(),
+                creditRequestDto.getCIN(),
                 scaleEntity.getId(),
                 creditRequestDto.getAmount(),
                 (scaleEntity.getInterestRate() * creditRequestDto.getAmount())/ 100,
                 creditRequestDto.getDurationInMonths());
         CreditDto creditCreated = creditService.addCredit(creditEntity);
 
+        ScoreRequestDto scoreRequestDto = new ScoreRequestDto(
+                creditRequestDto.getCIN(),
+                creditCreated.getId(),
+                creditCreated.getMonthlyPayment()
+        );
+        scoreService.getScore(scoreRequestDto);
         ApiResponse<CreditDto> response = new ApiResponse<>(creditCreated, "Credit created successfully.", true);
         return new ResponseEntity<>(response, HttpStatus.CREATED);
     }

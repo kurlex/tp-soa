@@ -8,7 +8,7 @@ import lombok.NoArgsConstructor;
 @AllArgsConstructor
 @NoArgsConstructor
 public class CreditRequestDto {
-    private Long clientId;
+    private Long CIN;
     private Double amount;
     private Long durationInMonths;
 }

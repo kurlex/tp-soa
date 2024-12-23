@@ -13,8 +13,8 @@ import java.util.Date;
 @AllArgsConstructor
 @Table(name = "credit")
 public class CreditEntity {
-    public CreditEntity(Long clientId, Long scaleId, Double amount, Double interest, Long durationInMonths) {
-        this.clientId = clientId;
+    public CreditEntity(Long CIN, Long scaleId, Double amount, Double interest, Long durationInMonths) {
+        this.CIN = CIN;
         this.scaleId = scaleId;
         this.amount = amount;
         this.interest = interest;
@@ -25,7 +25,7 @@ public class CreditEntity {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    private Long clientId;
+    private Long CIN;
     private Long scaleId;
     private Double amount;
     private Double interest;

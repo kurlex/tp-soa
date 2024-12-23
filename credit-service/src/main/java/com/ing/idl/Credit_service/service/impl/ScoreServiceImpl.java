@@ -1,52 +1,46 @@
 package com.ing.idl.Credit_service.service.impl;
 
 import com.ing.idl.Credit_service.dto.ScaleDto;
+import com.ing.idl.Credit_service.dto.ScoreDto;
+import com.ing.idl.Credit_service.dto.ScoreRequestDto;
 import com.ing.idl.Credit_service.entity.ScaleEntity;
 import com.ing.idl.Credit_service.mapper.impl.ScaleMapper;
-import com.ing.idl.Credit_service.service.ScaleService;
 import com.ing.idl.Credit_service.repository.ScaleRepository;
-
+import com.ing.idl.Credit_service.service.ScaleService;
+import com.ing.idl.Credit_service.service.ScoreService;
+import org.springframework.http.HttpEntity;
+import org.springframework.http.HttpHeaders;
+import org.springframework.http.HttpMethod;
+import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;
+import org.springframework.web.client.RestTemplate;
 
 import java.util.Comparator;
 import java.util.List;
 
 
 @Service
-public class ScaleServiceImpl implements ScaleService {
-
-    private final ScaleRepository scaleRepository;
-    private final ScaleMapper scaleMapper;
-
-    public ScaleServiceImpl(ScaleRepository scaleRepository, ScaleMapper scaleMapper) {
-        this.scaleRepository = scaleRepository;
-        this.scaleMapper = scaleMapper;
-    }
-
+public class ScoreServiceImpl implements ScoreService {
     @Override
-    public ScaleEntity getScale(Double amount, long durationInMonths) {
-        List<ScaleEntity> scaleEntities = this.scaleRepository.findAll();
+    public ScoreDto getScore(ScoreRequestDto scoreRequestDto) {
+        String url = "http://localhost:8003/scores/";
+        RestTemplate restTemplate = new RestTemplate();
 
-        List<ScaleEntity> validScales = scaleEntities.stream()
-                .filter(scale -> durationInMonths >= scale.getMinimumDurationInMonths() &&
-                        durationInMonths <= scale.getMaximumDurationInMonths() &&
-                        amount >= scale.getMinimumAmount() &&
-                        amount <= scale.getMaximumAmount())
-                .toList();
+        try {
+            HttpHeaders headers = new HttpHeaders();
+            headers.set("Content-Type", "application/json");
+            HttpEntity<ScoreRequestDto> request = new HttpEntity<>(scoreRequestDto, headers);
 
-        if (!validScales.isEmpty()) {
-            return validScales.stream()
-                    .min(Comparator.comparing(ScaleEntity::getInterestRate))
-                    .orElseThrow(() -> new RuntimeException("No scale found"));
+            ResponseEntity<ScoreDto> response = restTemplate.exchange(
+                    url,
+                    HttpMethod.POST,
+                    request,
+                    ScoreDto.class
+            );
+
+            return response.getBody();
+        } catch (Exception e) {
+            throw new RuntimeException("Failed to fetch score", e);
         }
-
-        return null;
-    }
-
-    @Override
-    public ScaleDto addScale(ScaleDto scaleDto){
-        ScaleEntity scaleEntity = this.scaleMapper.toEntity(scaleDto);
-        scaleEntity = scaleRepository.save(scaleEntity);
-        return scaleMapper.toDto(scaleEntity);
     }
 }
