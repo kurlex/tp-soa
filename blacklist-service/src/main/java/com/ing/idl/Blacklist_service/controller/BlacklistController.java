@@ -3,6 +3,7 @@ package com.ing.idl.Blacklist_service.controller;
 import com.ing.idl.Blacklist_service.dto.ApiResponse;
 import com.ing.idl.Blacklist_service.dto.BlacklistDto;
 import com.ing.idl.Blacklist_service.service.BlacklistService;
+import com.ing.idl.Blacklist_service.service.ClientService;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
@@ -11,9 +12,11 @@ import org.springframework.web.bind.annotation.*;
 @RequestMapping("/blacklists")
 public class BlacklistController {
     private final BlacklistService blacklistService;
+    private final ClientService clientService;
 
-    public BlacklistController(BlacklistService blacklistService) {
+    public BlacklistController(BlacklistService blacklistService, ClientService clientService) {
         this.blacklistService = blacklistService;
+        this.clientService = clientService;
     }
 
     @PostMapping
