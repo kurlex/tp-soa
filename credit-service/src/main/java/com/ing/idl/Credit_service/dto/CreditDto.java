@@ -9,7 +9,7 @@ import lombok.NoArgsConstructor;
 @NoArgsConstructor
 public class CreditDto {
     private Long id;
-    private Long clientId;
+
     private Long scaleId;
     private Double amount;
     private Double interest;

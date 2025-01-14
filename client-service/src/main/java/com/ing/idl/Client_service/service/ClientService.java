@@ -6,5 +6,8 @@ import org.springframework.data.domain.Page;
 
 public interface ClientService {
     ClientDto addClient(ClientDto clientDto);
-    ClientDto getClientByCIN(Long CIN);
+    ClientDto getClientByCIN(String CIN);
+
+
+    boolean clientExistsByCIN(String cin);
 }

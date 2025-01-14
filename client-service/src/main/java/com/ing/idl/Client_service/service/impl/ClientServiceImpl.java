@@ -29,8 +29,8 @@ public class ClientServiceImpl implements ClientService {
 
 
     @Override
-    public ClientDto getClientByCIN(Long CIN) {
-        Optional<ClientEntity> clientEntityOptional = clientRepository.findByCIN(CIN.toString());
+    public ClientDto getClientByCIN(String cin) {
+        Optional<ClientEntity> clientEntityOptional = clientRepository.findByCin(cin);
 
         if (clientEntityOptional.isEmpty()) {
             return null;
@@ -38,6 +38,11 @@ public class ClientServiceImpl implements ClientService {
 
         ClientEntity clientEntity = clientEntityOptional.get();
         return clientMapper.toDto(clientEntity);
+    }
+
+    @Override
+    public boolean clientExistsByCIN(String cin) {
+        return clientRepository.existsByCin(cin);
     }
 
 }

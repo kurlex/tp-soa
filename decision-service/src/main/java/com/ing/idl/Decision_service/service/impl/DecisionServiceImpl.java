@@ -3,7 +3,7 @@ package com.ing.idl.Decision_service.service.impl;
 import com.ing.idl.Decision_service.dto.DecisionDto;
 import com.ing.idl.Decision_service.entity.DecisionEntity;
 import com.ing.idl.Decision_service.mapper.impl.DecisionMapper;
-import com.ing.idl.Decision_service.mapper.impl.DecisionMapperImpl;
+import com.ing.idl.Decision_service.mapper.impl.DecisionMapper;
 import com.ing.idl.Decision_service.repository.DecisionRepository;
 import com.ing.idl.Decision_service.service.DecisionService;
 import org.springframework.stereotype.Service;

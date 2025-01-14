@@ -17,13 +17,13 @@ import org.springframework.web.client.RestTemplate;
 public class BCTServiceImpl implements BCTService {
     @Override
     public boolean checkClient(BlacklistRequestDto blacklistRequestDto) {
-        String url = "http://localhost:8004/bct/blacklist/" + blacklistRequestDto.getClientCIN();
+        String url = "http://localhost:8004/bct/blacklist/" + blacklistRequestDto.getClientCin();
         RestTemplate restTemplate = new RestTemplate();
         try {
             Boolean isBlacklisted = restTemplate.getForObject(url, Boolean.class);
             return Boolean.TRUE.equals(isBlacklisted);
         } catch (Exception e) {
-            throw new RuntimeException("Failed to fetch client with CIN " + blacklistRequestDto.getClientCIN(), e);
+            throw new RuntimeException("Failed to fetch client with CIN " + blacklistRequestDto.getClientCin(), e);
         }
     }
 }

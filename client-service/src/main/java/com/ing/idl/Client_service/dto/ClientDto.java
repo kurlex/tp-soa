@@ -14,8 +14,11 @@ public class ClientDto {
     private Long id;
     private String name;
     private String lastname;
-    private String CIN;
+    private String cin;
     private Double salary;
     private Date birthdate;
     private ContractEnum contract;
+
+
 }
+

@@ -9,5 +9,5 @@ import java.util.Optional;
 
 @Repository
 public interface CreditRepository extends JpaRepository<CreditEntity, Long> {
-    Optional<List<CreditEntity>> findByCIN(Long clientId);
+    Optional<List<CreditEntity>> findByCin(Long clientId);
 }

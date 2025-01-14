@@ -27,9 +27,9 @@ public class ScoreController {
 
     @PostMapping
     public ResponseEntity<ApiResponse<ScoreDto>> createScore(@RequestBody ScoreRequestDto scoreRequestDto) {
-        ClientDto client = clientService.getClientById(scoreRequestDto.getCIN());
+        ClientDto client = clientService.getClientById(scoreRequestDto.getCin());
 
-        int score = bctService.checkClient(new BlacklistRequestDto(scoreRequestDto.getCIN()))
+        int score = bctService.checkClient(new BlacklistRequestDto(scoreRequestDto.getCin()))
                 ? 0
                 : scoreService.computeScore(client.getSalary(), client.getContract(), scoreRequestDto.getMonthlyPayment());
 

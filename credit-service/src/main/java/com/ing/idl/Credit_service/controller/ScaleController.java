@@ -25,7 +25,7 @@ public class ScaleController {
     }
 
     @PostMapping
-    public ResponseEntity<ApiResponse<ScaleDto>> createCredit(@RequestBody ScaleDto scaleDto) {
+    public ResponseEntity<ApiResponse<ScaleDto>> createScale(@RequestBody ScaleDto scaleDto) {
         ScaleDto scaleCreated = scaleService.addScale(scaleDto);
         ApiResponse<ScaleDto> response = new ApiResponse<>(scaleCreated, "Scale created successfully.", true);
         return new ResponseEntity<>(response, HttpStatus.CREATED);

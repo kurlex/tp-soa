@@ -20,8 +20,8 @@ public class ClientEntity {
     private String name;
     private String lastname;
 
-    @Column(name = "cin", nullable = false, unique = true)
-    private String CIN;
+    @Column(name = "cin",nullable = false, unique = true)
+    private String cin;
 
     private Double salary;
     private Date birthdate;

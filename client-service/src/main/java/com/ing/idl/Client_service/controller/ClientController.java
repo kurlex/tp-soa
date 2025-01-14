@@ -19,16 +19,31 @@ public class ClientController {
         this.clientService = clientService;
     }
 
-    @PostMapping
+   /* @PostMapping
     public ResponseEntity<ApiResponse<ClientDto>> createClient(@RequestBody ClientDto clientDto) {
         clientDto.setId(null);
         ClientDto clientCreated = clientService.addClient(clientDto);
         ApiResponse<ClientDto> response = new ApiResponse<>(clientCreated, "Client created successfully.", true);
         return new ResponseEntity<>(response, HttpStatus.CREATED);
-    }
+    }*/
+   @PostMapping
+   public ResponseEntity<ApiResponse<ClientDto>> createClient(@RequestBody ClientDto clientDto) {
+
+       boolean clientExists = clientService.clientExistsByCIN(clientDto.getCin());
+
+       if (clientExists) {
+           ApiResponse<ClientDto> response = new ApiResponse<>(null, "Client already exists.", false);
+           return new ResponseEntity<>(response, HttpStatus.CONFLICT);
+       }
+
+       clientDto.setId(null);
+       ClientDto clientCreated = clientService.addClient(clientDto);
+       ApiResponse<ClientDto> response = new ApiResponse<>(clientCreated, "Client created successfully.", true);
+       return new ResponseEntity<>(response, HttpStatus.CREATED);
+   }
 
     @GetMapping(path = "/{cin}")
-    public ClientDto getClient(@PathVariable Long cin) {
+    public ClientDto getClient(@PathVariable String cin) {
         return clientService.getClientByCIN(cin);
     }
 }

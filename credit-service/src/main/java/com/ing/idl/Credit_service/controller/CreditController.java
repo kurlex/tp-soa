@@ -32,12 +32,12 @@ public class CreditController {
     public ResponseEntity<ApiResponse<CreditDto>> createCredit(@RequestBody CreditRequestDto creditRequestDto) {
         ScaleEntity scaleEntity = scaleService.getScale(creditRequestDto.getAmount(), creditRequestDto.getDurationInMonths());
         if (scaleEntity == null) {
-            ApiResponse<CreditDto> response = new ApiResponse<>(null, "no scale is available.", false);
+            ApiResponse<CreditDto> response = new ApiResponse<>(null, "You can't have credit, there is no scale available with this request.", false);
             return new ResponseEntity<>(response, HttpStatus.BAD_REQUEST);
 
         }
         CreditEntity creditEntity = new CreditEntity(
-                creditRequestDto.getCIN(),
+                creditRequestDto.getCin(),
                 scaleEntity.getId(),
                 creditRequestDto.getAmount(),
                 (scaleEntity.getInterestRate() * creditRequestDto.getAmount())/ 100,
@@ -45,7 +45,7 @@ public class CreditController {
         CreditDto creditCreated = creditService.addCredit(creditEntity);
 
         ScoreRequestDto scoreRequestDto = new ScoreRequestDto(
-                creditRequestDto.getCIN(),
+                creditRequestDto.getCin(),
                 creditCreated.getId(),
                 creditCreated.getMonthlyPayment()
         );

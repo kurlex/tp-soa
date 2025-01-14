@@ -8,5 +8,6 @@ import java.util.Optional;
 
 @Repository
 public interface ClientRepository extends JpaRepository<ClientEntity, Long> {
-    Optional<ClientEntity> findByCIN(String CIN);
+    Optional<ClientEntity> findByCin(String cin);
+    boolean existsByCin(String cin);
 }

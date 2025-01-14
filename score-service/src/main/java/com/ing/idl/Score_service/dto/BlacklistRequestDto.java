@@ -8,5 +8,5 @@ import lombok.NoArgsConstructor;
 @AllArgsConstructor
 @NoArgsConstructor
 public class BlacklistRequestDto {
-    private Long clientCIN;
+    private Long clientCin;
 }
