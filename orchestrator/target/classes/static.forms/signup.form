@@ -1,0 +1,112 @@
+{
+  "components": [
+    {
+      "text": "# Sign up",
+      "type": "text",
+      "layout": {
+        "row": "Row_1bwejmo",
+        "columns": null
+      },
+      "id": "Field_1dsj0sq"
+    },
+    {
+      "label": "first name",
+      "type": "textfield",
+      "layout": {
+        "row": "Row_15wq1oz",
+        "columns": null
+      },
+      "id": "Field_117iob8",
+      "key": "firstName",
+      "validate": {
+        "required": true
+      }
+    },
+    {
+      "label": "last name",
+      "type": "textfield",
+      "layout": {
+        "row": "Row_15wq1oz",
+        "columns": null
+      },
+      "id": "Field_08wj4cr",
+      "key": "lastName",
+      "validate": {
+        "required": true
+      }
+    },
+    {
+      "label": "CIN",
+      "type": "textfield",
+      "layout": {
+        "row": "Row_1g4xpi3",
+        "columns": null
+      },
+      "id": "Field_0v5goxm",
+      "key": "CIN",
+      "validate": {
+        "required": true
+      }
+    },
+    {
+      "label": "salary",
+      "type": "number",
+      "layout": {
+        "row": "Row_1g4xpi3",
+        "columns": null
+      },
+      "id": "Field_0vddpy7",
+      "key": "salary",
+      "validate": {
+        "required": true
+      }
+    },
+    {
+      "subtype": "date",
+      "dateLabel": "birthdate",
+      "type": "datetime",
+      "layout": {
+        "row": "Row_0wjch59",
+        "columns": null
+      },
+      "id": "Field_0v0ayk7",
+      "key": "birthdate",
+      "validate": {
+        "required": true
+      }
+    },
+    {
+      "label": "contract",
+      "values": [
+        {
+          "label": "CDI",
+          "value": "CDI"
+        },
+        {
+          "label": "CDD",
+          "value": "CDD"
+        },
+        {
+          "label": "CIVP",
+          "value": "CIVP"
+        }
+      ],
+      "type": "select",
+      "layout": {
+        "row": "Row_0wjch59",
+        "columns": null
+      },
+      "id": "Field_0vyrswp",
+      "key": "contract"
+    }
+  ],
+  "type": "default",
+  "id": "signup",
+  "executionPlatform": "Camunda Cloud",
+  "executionPlatformVersion": "8.6.0",
+  "exporter": {
+    "name": "Camunda Modeler",
+    "version": "5.30.0"
+  },
+  "schemaVersion": 17
+}

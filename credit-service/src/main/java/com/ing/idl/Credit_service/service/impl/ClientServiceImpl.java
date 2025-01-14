@@ -1,7 +1,7 @@
-package com.ing.idl.Score_service.service.impl;
+package com.ing.idl.Credit_service.service.impl;
 
-import com.ing.idl.Score_service.dto.ClientDto;
-import com.ing.idl.Score_service.service.ClientService;
+import com.ing.idl.Credit_service.dto.ClientDto;
+import com.ing.idl.Credit_service.service.ClientService;
 import org.springframework.stereotype.Service;
 import org.springframework.web.client.RestTemplate;
 

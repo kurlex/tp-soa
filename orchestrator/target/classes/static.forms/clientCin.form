@@ -1,0 +1,36 @@
+{
+  "components": [
+    {
+      "text": "# Login",
+      "type": "text",
+      "layout": {
+        "row": "Row_1qtnv7l",
+        "columns": null
+      },
+      "id": "Field_1l9cblq"
+    },
+    {
+      "label": "CIN",
+      "type": "textfield",
+      "layout": {
+        "row": "Row_0net9u4",
+        "columns": null
+      },
+      "id": "Field_0x72lk6",
+      "key": "CIN",
+      "description": "the user CIN",
+      "validate": {
+        "required": true
+      }
+    }
+  ],
+  "type": "default",
+  "id": "clientCin",
+  "executionPlatform": "Camunda Cloud",
+  "executionPlatformVersion": "8.6.0",
+  "exporter": {
+    "name": "Camunda Modeler",
+    "version": "5.30.0"
+  },
+  "schemaVersion": 17
+}

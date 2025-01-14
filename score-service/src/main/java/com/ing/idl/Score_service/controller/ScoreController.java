@@ -29,6 +29,11 @@ public class ScoreController {
     public ResponseEntity<ApiResponse<ScoreDto>> createScore(@RequestBody ScoreRequestDto scoreRequestDto) {
         ClientDto client = clientService.getClientById(scoreRequestDto.getCIN());
 
+        if (client == null) {
+            ApiResponse<ScoreDto> response = new ApiResponse<>(null, "no client is found", false);
+            return new ResponseEntity<>(response, HttpStatus.BAD_REQUEST);
+        }
+
         int score = bctService.checkClient(new BlacklistRequestDto(scoreRequestDto.getCIN()))
                 ? 0
                 : scoreService.computeScore(client.getSalary(), client.getContract(), scoreRequestDto.getMonthlyPayment());

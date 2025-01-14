@@ -1,11 +1,9 @@
 package com.ing.idl.Credit_service.controller;
 
-import com.ing.idl.Credit_service.dto.ApiResponse;
-import com.ing.idl.Credit_service.dto.CreditDto;
-import com.ing.idl.Credit_service.dto.CreditRequestDto;
-import com.ing.idl.Credit_service.dto.ScoreRequestDto;
+import com.ing.idl.Credit_service.dto.*;
 import com.ing.idl.Credit_service.entity.CreditEntity;
 import com.ing.idl.Credit_service.entity.ScaleEntity;
+import com.ing.idl.Credit_service.service.ClientService;
 import com.ing.idl.Credit_service.service.CreditService;
 import com.ing.idl.Credit_service.service.ScaleService;
 import com.ing.idl.Credit_service.service.ScoreService;
@@ -21,21 +19,29 @@ public class CreditController {
     private final CreditService creditService;
     private final ScaleService scaleService;
     private final ScoreService scoreService;
+    private final ClientService clientService;
 
-    public CreditController(CreditService creditService, ScaleService scaleService, ScoreService scoreService) {
+    public CreditController(CreditService creditService, ClientService clientService, ScaleService scaleService, ScoreService scoreService) {
         this.creditService = creditService;
         this.scaleService = scaleService;
         this.scoreService = scoreService;
+        this.clientService = clientService;
     }
 
     @PostMapping
     public ResponseEntity<ApiResponse<CreditDto>> createCredit(@RequestBody CreditRequestDto creditRequestDto) {
+        ClientDto client = clientService.getClientById(creditRequestDto.getCIN());
+        if (client == null) {
+            ApiResponse<CreditDto> response = new ApiResponse<>(null, "no client is found", false);
+            return new ResponseEntity<>(response, HttpStatus.BAD_REQUEST);
+        }
+
         ScaleEntity scaleEntity = scaleService.getScale(creditRequestDto.getAmount(), creditRequestDto.getDurationInMonths());
         if (scaleEntity == null) {
             ApiResponse<CreditDto> response = new ApiResponse<>(null, "no scale is available.", false);
             return new ResponseEntity<>(response, HttpStatus.BAD_REQUEST);
-
         }
+
         CreditEntity creditEntity = new CreditEntity(
                 creditRequestDto.getCIN(),
                 scaleEntity.getId(),
