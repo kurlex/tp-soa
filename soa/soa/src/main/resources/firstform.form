@@ -1,0 +1,82 @@
+{
+  "components": [
+    {
+      "label": "cin",
+      "type": "textfield",
+      "layout": {
+        "row": "Row_12d99ci",
+        "columns": null
+      },
+      "id": "Field_1hnli7y",
+      "key": "cin",
+      "validate": {
+        "required": true
+      }
+    },
+    {
+      "label": "firstname",
+      "type": "textfield",
+      "layout": {
+        "row": "Row_1dmax1w",
+        "columns": null
+      },
+      "id": "Field_004ejtn",
+      "key": "firstname",
+      "validate": {
+        "required": false
+      }
+    },
+    {
+      "label": "lastname",
+      "type": "textfield",
+      "layout": {
+        "row": "Row_15jy5r3",
+        "columns": null
+      },
+      "id": "Field_1nak9sy",
+      "key": "lastname",
+      "validate": {
+        "required": false
+      }
+    },
+    {
+      "label": "salary",
+      "type": "textfield",
+      "layout": {
+        "row": "Row_1ugsotl",
+        "columns": null
+      },
+      "id": "Field_1f1qt5x",
+      "key": "salary"
+    },
+    {
+      "label": "birthdate",
+      "type": "textfield",
+      "layout": {
+        "row": "Row_0zcmrcj",
+        "columns": null
+      },
+      "id": "Field_1fihinr",
+      "key": "birthdate"
+    },
+    {
+      "label": "contract",
+      "type": "textfield",
+      "layout": {
+        "row": "Row_0wpon9l",
+        "columns": null
+      },
+      "id": "Field_08f03t9",
+      "key": "contract"
+    }
+  ],
+  "type": "default",
+  "id": "firstform",
+  "exporter": {
+    "name": "Camunda Modeler",
+    "version": "5.30.0"
+  },
+  "executionPlatform": "Camunda Platform",
+  "executionPlatformVersion": "7.22.0",
+  "schemaVersion": 17
+}

@@ -1,11 +1,8 @@
 package com.ing.idl.Client_service.controller;
 
 import com.ing.idl.Client_service.dto.ApiResponse;
-import com.ing.idl.Client_service.dto.PageableDto;
 import com.ing.idl.Client_service.dto.ClientDto;
 import com.ing.idl.Client_service.service.ClientService;
-import com.ing.idl.Client_service.util.CheckAuthorization;
-import org.springframework.data.domain.Page;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
@@ -14,10 +11,27 @@ import org.springframework.web.bind.annotation.*;
 @RequestMapping("/clients")
 public class ClientController {
     private final ClientService clientService;
+  /*   private final ClientProcessService clientProcessService;*/
+
+
 
     public ClientController(ClientService clientService) {
         this.clientService = clientService;
+
     }
+
+
+/*    @PostMapping("/start-process")
+    public String startClientProcess(
+            @RequestParam String name,
+            @RequestParam String lastname,
+            @RequestParam String cin,
+            @RequestParam Double salary,
+            @RequestParam String contract
+    ) {
+        clientProcessService.startClientCreationProcess(name, lastname, cin, salary, contract);
+        return "Client creation process started!";
+    }*/
 
    /* @PostMapping
     public ResponseEntity<ApiResponse<ClientDto>> createClient(@RequestBody ClientDto clientDto) {
