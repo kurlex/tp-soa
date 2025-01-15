@@ -1,0 +1,32 @@
+{
+  "components": [
+    {
+      "text": "# Blacklist",
+      "type": "text",
+      "layout": {
+        "row": "Row_0e8jmdb",
+        "columns": null
+      },
+      "id": "Field_1x2jxcn"
+    },
+    {
+      "label": "CIN",
+      "type": "textfield",
+      "layout": {
+        "row": "Row_19papx5",
+        "columns": null
+      },
+      "id": "Field_0mol7uk",
+      "key": "CIN"
+    }
+  ],
+  "type": "default",
+  "id": "blacklist",
+  "executionPlatform": "Camunda Cloud",
+  "executionPlatformVersion": "8.6.0",
+  "exporter": {
+    "name": "Camunda Modeler",
+    "version": "5.30.0"
+  },
+  "schemaVersion": 17
+}

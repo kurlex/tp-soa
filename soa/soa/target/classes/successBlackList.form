@@ -1,0 +1,22 @@
+{
+  "components": [
+    {
+      "text": "# Succedded to blacklist user",
+      "type": "text",
+      "layout": {
+        "row": "Row_1or41x7",
+        "columns": null
+      },
+      "id": "Field_0hm9opj"
+    }
+  ],
+  "type": "default",
+  "id": "successBlackList",
+  "executionPlatform": "Camunda Cloud",
+  "executionPlatformVersion": "8.6.0",
+  "exporter": {
+    "name": "Camunda Modeler",
+    "version": "5.30.0"
+  },
+  "schemaVersion": 17
+}

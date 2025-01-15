@@ -19,6 +19,7 @@ public class CreditEntity {
         this.amount = amount;
         this.interest = interest;
         this.durationInMonths = durationInMonths;
+
     }
 
     @Id
@@ -30,4 +31,6 @@ public class CreditEntity {
     private Double amount;
     private Double interest;
     private Long durationInMonths;
+
+
 }

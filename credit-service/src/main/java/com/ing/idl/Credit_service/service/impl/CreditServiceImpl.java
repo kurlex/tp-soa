@@ -49,6 +49,18 @@ public class CreditServiceImpl implements CreditService {
         return creditDtos;
     }
 
+    @Override
+    public CreditDto updateCredit(CreditEntity creditEntity) {
+        creditRepository.save(creditEntity);
+        return null;
+    }
+
+    @Override
+    public CreditEntity getCreditById(Long id) {
+        return creditRepository.findById(id).orElse(null);
+    }
+
+
     private Double calculateMonthlyPayment(CreditDto creditDto) {
         if (creditDto.getDurationInMonths() == 0 || creditDto.getAmount() == null || creditDto.getInterest() == null) {
             return 0.0;

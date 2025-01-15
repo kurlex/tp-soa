@@ -64,7 +64,7 @@
     </bpmn:startEvent>
     <bpmn:sequenceFlow id="Flow_0eiay9m" sourceRef="Event_019c3nt" targetRef="say-hello" />
     <bpmn:sequenceFlow id="Flow_0j1iwa0" sourceRef="Activity_0crb8qd" targetRef="Activity_05ljzw8" />
-    <bpmn:userTask id="Activity_1hgeac7" name="Credit Info" camunda:formRef="creditInfo" camunda:formRefBinding="deployment">
+    <bpmn:userTask id="Activity_1hgeac777" name="Credit Info" camunda:formRef="creditInfo" camunda:formRefBinding="deployment">
       <bpmn:incoming>Flow_0qdicsz</bpmn:incoming>
       <bpmn:outgoing>Flow_11jkjra</bpmn:outgoing>
     </bpmn:userTask>
@@ -72,8 +72,8 @@
       <bpmn:incoming>Flow_11jkjra</bpmn:incoming>
       <bpmn:outgoing>Flow_17n4tn6</bpmn:outgoing>
     </bpmn:userTask>
-    <bpmn:sequenceFlow id="Flow_0qdicsz" sourceRef="Activity_05ljzw8" targetRef="Activity_1hgeac7" />
-    <bpmn:sequenceFlow id="Flow_11jkjra" sourceRef="Activity_1hgeac7" targetRef="Activity_12lkgob" />
+    <bpmn:sequenceFlow id="Flow_0qdicsz" sourceRef="Activity_05ljzw8" targetRef="Activity_1hgeac777" />
+    <bpmn:sequenceFlow id="Flow_11jkjra" sourceRef="Activity_1hgeac777" targetRef="Activity_12lkgob" />
     <bpmn:sequenceFlow id="Flow_17n4tn6" sourceRef="Activity_12lkgob" targetRef="Event_0tohtv2" />
   </bpmn:process>
   <bpmndi:BPMNDiagram id="BPMNDiagram_1">
@@ -133,7 +133,7 @@
         <dc:Bounds x="1980" y="140" width="100" height="80" />
         <bpmndi:BPMNLabel />
       </bpmndi:BPMNShape>
-      <bpmndi:BPMNShape id="Activity_1hgeac7_di" bpmnElement="Activity_1hgeac7" bioc:stroke="#1e88e5" bioc:fill="#bbdefb" color:background-color="#bbdefb" color:border-color="#1e88e5">
+      <bpmndi:BPMNShape id="Activity_1hgeac7_di" bpmnElement="Activity_1hgeac777" bioc:stroke="#1e88e5" bioc:fill="#bbdefb" color:background-color="#bbdefb" color:border-color="#1e88e5">
         <dc:Bounds x="1880" y="280" width="100" height="80" />
         <bpmndi:BPMNLabel />
       </bpmndi:BPMNShape>

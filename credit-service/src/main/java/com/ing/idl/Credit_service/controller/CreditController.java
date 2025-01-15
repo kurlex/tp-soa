@@ -56,4 +56,6 @@ public class CreditController {
     public List<CreditDto> getCredits(@PathVariable Long clientId) {
         return creditService.getCreditByClientId(clientId);
     }
+
+
 }

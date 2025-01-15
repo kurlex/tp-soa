@@ -8,4 +8,7 @@ import java.util.List;
 public interface CreditService {
     CreditDto addCredit(CreditEntity creditEntity);
     List<CreditDto> getCreditByClientId(Long clientId);
+    CreditDto updateCredit(CreditEntity creditEntity);
+
+    CreditEntity getCreditById(Long id);
 }

@@ -1,0 +1,42 @@
+{
+  "components": [
+    {
+      "text": "# Pick Option",
+      "type": "text",
+      "layout": {
+        "row": "Row_130qvg2",
+        "columns": null
+      },
+      "id": "Field_1fri43l"
+    },
+    {
+      "label": "",
+      "values": [
+        {
+          "label": "Add Scale",
+          "value": "scale"
+        },
+        {
+          "label": "Blacklist",
+          "value": "blacklist"
+        }
+      ],
+      "type": "select",
+      "layout": {
+        "row": "Row_10chtdt",
+        "columns": null
+      },
+      "id": "Field_184lrf1",
+      "key": "select"
+    }
+  ],
+  "type": "default",
+  "id": "pickOption",
+  "executionPlatform": "Camunda Cloud",
+  "executionPlatformVersion": "8.6.0",
+  "exporter": {
+    "name": "Camunda Modeler",
+    "version": "5.30.0"
+  },
+  "schemaVersion": 17
+}
