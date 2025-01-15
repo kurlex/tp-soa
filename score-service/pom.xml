@@ -70,11 +70,7 @@
 			<version>1.5.5.Final</version>
 			<scope>provided</scope>
 		</dependency>
-		<dependency>
-			<groupId>org.camunda.bpm.springboot</groupId>
-			<artifactId>camunda-bpm-spring-boot-starter</artifactId>
-			<version>7.20.0</version>
-		</dependency>
+
 
 
 	</dependencies>

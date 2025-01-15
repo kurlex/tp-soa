@@ -1,0 +1,23 @@
+{
+  "components": [
+    {
+      "label": "score",
+      "type": "textfield",
+      "layout": {
+        "row": "Row_0lbt1ql",
+        "columns": null
+      },
+      "id": "Field_02nskh1",
+      "key": "score"
+    }
+  ],
+  "type": "default",
+  "id": "score",
+  "exporter": {
+    "name": "Camunda Modeler",
+    "version": "5.30.0"
+  },
+  "executionPlatform": "Camunda Platform",
+  "executionPlatformVersion": "7.22.0",
+  "schemaVersion": 17
+}

@@ -49,7 +49,6 @@ public class ClientController {
            ApiResponse<ClientDto> response = new ApiResponse<>(null, "Client already exists.", false);
            return new ResponseEntity<>(response, HttpStatus.CONFLICT);
        }
-
        clientDto.setId(null);
        ClientDto clientCreated = clientService.addClient(clientDto);
        ApiResponse<ClientDto> response = new ApiResponse<>(clientCreated, "Client created successfully.", true);

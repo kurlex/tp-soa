@@ -10,7 +10,7 @@ public class ClientServiceImpl implements ClientService {
 
     @Override
     public ClientDto getClientById(Long CIN) {
-        String url = "http://localhost:8010/clients/" + CIN;
+        String url = "http://localhost:8111/clients/" + CIN;
         RestTemplate restTemplate = new RestTemplate();
         try {
             return restTemplate.getForObject(url, ClientDto.class);

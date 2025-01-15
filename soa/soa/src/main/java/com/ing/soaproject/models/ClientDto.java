@@ -1,26 +1,32 @@
 package com.ing.soaproject.models;
 
 
+import com.fasterxml.jackson.annotation.JsonProperty;
+import lombok.AllArgsConstructor;
+import lombok.NoArgsConstructor;
+
 import java.util.Date;
-
+@AllArgsConstructor
+@NoArgsConstructor
 public class ClientDto {
-    private Long id;
+    @JsonProperty("name")
     private String name;
-    private String lastname;
-    private String cin;
-    private Double salary;
-   // private Date birthdate;
-   private String birthdate;
-   // private ContractEnum contract;
-   private String contract;
 
-    public ClientDto(String name, String lastname, String cin, Double salary, String birthdate, String contract) {
-        this.name = name;
-        this.lastname = lastname;
-        this.cin = cin;
-        this.salary = salary;
-        this.birthdate = birthdate;
-        this.contract = contract;
-    }
+    @JsonProperty("lastname")
+    private String lastname;
+
+    @JsonProperty("cin")
+    private String cin;
+
+    @JsonProperty("salary")
+    private Double salary;
+
+    @JsonProperty("birthdate")
+    private String birthdate; // Keep as String if using JSON
+
+    @JsonProperty("contract")
+    private String contract;
+
+
 }
 

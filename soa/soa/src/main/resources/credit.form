@@ -1,0 +1,42 @@
+{
+  "components": [
+    {
+      "text": "# Create Credit",
+      "type": "text",
+      "layout": {
+        "row": "Row_0grcdqj",
+        "columns": null
+      },
+      "id": "Field_0dqcfoo"
+    },
+    {
+      "label": "Amount",
+      "type": "number",
+      "layout": {
+        "row": "Row_1iesfcq",
+        "columns": null
+      },
+      "id": "Field_0a1yuxa",
+      "key": "amount"
+    },
+    {
+      "label": "Duration in months",
+      "type": "number",
+      "layout": {
+        "row": "Row_1iesfcq",
+        "columns": null
+      },
+      "id": "Field_1ojbf7m",
+      "key": "durationInMonths"
+    }
+  ],
+  "type": "default",
+  "id": "credit",
+  "executionPlatform": "Camunda Cloud",
+  "executionPlatformVersion": "8.6.0",
+  "exporter": {
+    "name": "Camunda Modeler",
+    "version": "5.30.0"
+  },
+  "schemaVersion": 17
+}

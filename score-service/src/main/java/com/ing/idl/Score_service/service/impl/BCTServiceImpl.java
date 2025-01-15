@@ -17,7 +17,7 @@ import org.springframework.web.client.RestTemplate;
 public class BCTServiceImpl implements BCTService {
     @Override
     public boolean checkClient(BlacklistRequestDto blacklistRequestDto) {
-        String url = "http://localhost:8004/bct/blacklist/" + blacklistRequestDto.getClientCin();
+        String url = "http://localhost:8444/bct/blacklist/" + blacklistRequestDto.getClientCin();
         RestTemplate restTemplate = new RestTemplate();
         try {
             Boolean isBlacklisted = restTemplate.getForObject(url, Boolean.class);

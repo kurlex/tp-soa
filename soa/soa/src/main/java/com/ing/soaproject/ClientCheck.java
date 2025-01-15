@@ -12,13 +12,13 @@ public class ClientCheck implements JavaDelegate {
 
 
     boolean doesClientExists(String cin) {
-        String url = "http://localhost:8010/clients/" + cin;
+        String url = "http://localhost:8111/clients/" + cin;
         RestTemplate restTemplate = new RestTemplate();
         try {
-            restTemplate.getForObject(url, com.ing.soaproject.models.ClientDto.class);
-            return false;
+            ClientDto client = restTemplate.getForObject(url, com.ing.soaproject.models.ClientDto.class);
+            return (client != null);
         } catch (Exception e) {
-            return true;
+            return false;
         }
     }
 

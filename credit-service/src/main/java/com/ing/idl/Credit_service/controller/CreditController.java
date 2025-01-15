@@ -1,9 +1,6 @@
 package com.ing.idl.Credit_service.controller;
 
-import com.ing.idl.Credit_service.dto.ApiResponse;
-import com.ing.idl.Credit_service.dto.CreditDto;
-import com.ing.idl.Credit_service.dto.CreditRequestDto;
-import com.ing.idl.Credit_service.dto.ScoreRequestDto;
+import com.ing.idl.Credit_service.dto.*;
 import com.ing.idl.Credit_service.entity.CreditEntity;
 import com.ing.idl.Credit_service.entity.ScaleEntity;
 import com.ing.idl.Credit_service.service.CreditService;
@@ -49,7 +46,8 @@ public class CreditController {
                 creditCreated.getId(),
                 creditCreated.getMonthlyPayment()
         );
-        scoreService.getScore(scoreRequestDto);
+        ScoreDto s= scoreService.getScore(scoreRequestDto);
+        creditCreated.setScoreDto(s);
         ApiResponse<CreditDto> response = new ApiResponse<>(creditCreated, "Credit created successfully.", true);
         return new ResponseEntity<>(response, HttpStatus.CREATED);
     }

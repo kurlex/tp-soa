@@ -15,4 +15,5 @@ public class CreditDto {
     private Double interest;
     private Long durationInMonths;
     private Double monthlyPayment;
+    private ScoreDto scoreDto;
 }

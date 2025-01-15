@@ -17,7 +17,7 @@ public class DecisionServiceImpl implements DecisionService {
 
     @Override
     public DecisionDto addDecision(DecisionRequestDto decisionRequestDto) {
-        String url = "http://localhost:8005/decisions";
+        String url = "http://localhost:8555/decisions";
         RestTemplate restTemplate = new RestTemplate();
 
         try {

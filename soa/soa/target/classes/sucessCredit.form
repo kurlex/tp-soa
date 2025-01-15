@@ -1,0 +1,99 @@
+{
+  "components": [
+    {
+      "text": "# Credit",
+      "type": "text",
+      "layout": {
+        "row": "Row_122f9jv",
+        "columns": null
+      },
+      "id": "Field_0cg350v"
+    },
+    {
+      "label": "Credit Id",
+      "type": "textfield",
+      "layout": {
+        "row": "Row_1abn6sm",
+        "columns": null
+      },
+      "id": "Field_1122acu",
+      "key": "creditId",
+      "readonly": true
+    },
+    {
+      "label": "CIN",
+      "type": "textfield",
+      "layout": {
+        "row": "Row_1abn6sm",
+        "columns": null
+      },
+      "id": "Field_1edb8o4",
+      "key": "CIN",
+      "readonly": true
+    },
+    {
+      "label": "Amount",
+      "type": "textfield",
+      "layout": {
+        "row": "Row_1clb9cb",
+        "columns": null
+      },
+      "id": "Field_04lma8x",
+      "key": "amount",
+      "readonly": true
+    },
+    {
+      "label": "Monthly Payment",
+      "type": "textfield",
+      "layout": {
+        "row": "Row_1clb9cb",
+        "columns": 8
+      },
+      "id": "Field_0coe48r",
+      "key": "monthlyPayment",
+      "readonly": true
+    },
+    {
+      "label": "Duration In Months",
+      "type": "textfield",
+      "layout": {
+        "row": "Row_1clb9cb",
+        "columns": null
+      },
+      "id": "Field_1oqn8fs",
+      "key": "durationInMonths",
+      "readonly": true
+    },
+    {
+      "label": "Interest",
+      "type": "textfield",
+      "layout": {
+        "row": "Row_1kz5oar",
+        "columns": null
+      },
+      "id": "Field_1abvaqq",
+      "key": "interest",
+      "readonly": true
+    },
+    {
+      "label": "Scale Id",
+      "type": "textfield",
+      "layout": {
+        "row": "Row_1kz5oar",
+        "columns": null
+      },
+      "id": "Field_0dqhofw",
+      "key": "scaleId",
+      "readonly": true
+    }
+  ],
+  "type": "default",
+  "id": "creditInfo",
+  "executionPlatform": "Camunda Cloud",
+  "executionPlatformVersion": "8.6.0",
+  "exporter": {
+    "name": "Camunda Modeler",
+    "version": "5.30.0"
+  },
+  "schemaVersion": 17
+}
