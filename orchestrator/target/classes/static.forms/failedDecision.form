@@ -1,0 +1,22 @@
+{
+  "components": [
+    {
+      "text": "# Failed to get decision",
+      "type": "text",
+      "layout": {
+        "row": "Row_1qo610j",
+        "columns": null
+      },
+      "id": "Field_1yuu9vl"
+    }
+  ],
+  "type": "default",
+  "id": "failedDecision",
+  "executionPlatform": "Camunda Cloud",
+  "executionPlatformVersion": "8.6.0",
+  "exporter": {
+    "name": "Camunda Modeler",
+    "version": "5.30.0"
+  },
+  "schemaVersion": 17
+}

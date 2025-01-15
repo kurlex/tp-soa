@@ -1,0 +1,93 @@
+{
+  "components": [
+    {
+      "text": "# Scale",
+      "type": "text",
+      "layout": {
+        "row": "Row_1wqrmka",
+        "columns": null
+      },
+      "id": "Field_1tq27cl"
+    },
+    {
+      "label": "Scale Id",
+      "type": "number",
+      "layout": {
+        "row": "Row_138jhjv",
+        "columns": null
+      },
+      "id": "Field_0jlp5u8",
+      "key": "scaleId",
+      "readonly": true
+    },
+    {
+      "label": "Interest Rate",
+      "type": "number",
+      "layout": {
+        "row": "Row_138jhjv",
+        "columns": null
+      },
+      "id": "Field_0pqost3",
+      "key": "interestRate",
+      "decimalDigits": 2,
+      "readonly": true
+    },
+    {
+      "label": "Minimum Duration In Months",
+      "type": "number",
+      "layout": {
+        "row": "Row_1ayjotd",
+        "columns": null
+      },
+      "id": "Field_1jygn0g",
+      "key": "minimumDurationInMonths",
+      "decimalDigits": 0,
+      "readonly": true
+    },
+    {
+      "label": "Maximum Duration In Months",
+      "type": "number",
+      "layout": {
+        "row": "Row_1ayjotd",
+        "columns": null
+      },
+      "id": "Field_0vfskgd",
+      "key": "maximumDurationInMonths",
+      "decimalDigits": 0,
+      "readonly": true
+    },
+    {
+      "label": "Minimum Amount",
+      "type": "number",
+      "layout": {
+        "row": "Row_1pdk64v",
+        "columns": null
+      },
+      "id": "Field_1qshg4a",
+      "key": "minimumAmount",
+      "decimalDigits": 0,
+      "readonly": true
+    },
+    {
+      "label": "Maximum Amount",
+      "type": "number",
+      "layout": {
+        "row": "Row_1pdk64v",
+        "columns": null
+      },
+      "id": "Field_15ejd5s",
+      "key": "maximumAmount",
+      "decimalDigits": 0,
+      "readonly": true
+    }
+  ],
+  "type": "default",
+  "id": "successScale",
+  "exporter": {
+    "name": "Camunda Modeler",
+    "version": "5.30.0"
+  },
+  "executionPlatform": "Camunda Platform",
+  "executionPlatformVersion": "7.22.0",
+  "schemaVersion": 17
+}

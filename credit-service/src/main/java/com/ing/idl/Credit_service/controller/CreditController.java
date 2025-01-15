@@ -6,7 +6,6 @@ import com.ing.idl.Credit_service.entity.ScaleEntity;
 import com.ing.idl.Credit_service.service.ClientService;
 import com.ing.idl.Credit_service.service.CreditService;
 import com.ing.idl.Credit_service.service.ScaleService;
-import com.ing.idl.Credit_service.service.ScoreService;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
@@ -18,13 +17,11 @@ import java.util.List;
 public class CreditController {
     private final CreditService creditService;
     private final ScaleService scaleService;
-    private final ScoreService scoreService;
     private final ClientService clientService;
 
-    public CreditController(CreditService creditService, ClientService clientService, ScaleService scaleService, ScoreService scoreService) {
+    public CreditController(CreditService creditService, ClientService clientService, ScaleService scaleService) {
         this.creditService = creditService;
         this.scaleService = scaleService;
-        this.scoreService = scoreService;
         this.clientService = clientService;
     }
 
@@ -50,12 +47,6 @@ public class CreditController {
                 creditRequestDto.getDurationInMonths());
         CreditDto creditCreated = creditService.addCredit(creditEntity);
 
-        ScoreRequestDto scoreRequestDto = new ScoreRequestDto(
-                creditRequestDto.getCIN(),
-                creditCreated.getId(),
-                creditCreated.getMonthlyPayment()
-        );
-        scoreService.getScore(scoreRequestDto);
         ApiResponse<CreditDto> response = new ApiResponse<>(creditCreated, "Credit created successfully.", true);
         return new ResponseEntity<>(response, HttpStatus.CREATED);
     }

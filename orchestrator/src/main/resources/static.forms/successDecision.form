@@ -1,0 +1,66 @@
+{
+  "components": [
+    {
+      "text": "# Decision",
+      "type": "text",
+      "layout": {
+        "row": "Row_1rau7f0",
+        "columns": null
+      },
+      "id": "Field_1dx7a4c"
+    },
+    {
+      "label": "Decision Id",
+      "type": "textfield",
+      "layout": {
+        "row": "Row_0sifd7f",
+        "columns": null
+      },
+      "id": "Field_1rg1ojx",
+      "key": "decisionId",
+      "readonly": true
+    },
+    {
+      "label": "Credit Id",
+      "type": "textfield",
+      "layout": {
+        "row": "Row_0sifd7f",
+        "columns": null
+      },
+      "id": "Field_0xoxvmx",
+      "key": "creditId",
+      "readonly": true
+    },
+    {
+      "label": "Status",
+      "type": "textfield",
+      "layout": {
+        "row": "Row_05c3p6j",
+        "columns": null
+      },
+      "id": "Field_1f4k9sc",
+      "key": "statusDecision",
+      "readonly": true
+    },
+    {
+      "label": "Created At",
+      "type": "textfield",
+      "layout": {
+        "row": "Row_05c3p6j",
+        "columns": null
+      },
+      "id": "Field_1itjka4",
+      "key": "created_at",
+      "readonly": true
+    }
+  ],
+  "type": "default",
+  "id": "successDecision",
+  "executionPlatform": "Camunda Cloud",
+  "executionPlatformVersion": "8.6.0",
+  "exporter": {
+    "name": "Camunda Modeler",
+    "version": "5.30.0"
+  },
+  "schemaVersion": 17
+}

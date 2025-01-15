@@ -1,8 +1,10 @@
 package com.ing.orchestrator;
 
-import com.ing.orchestrator.models.ContractEnum;
+import com.ing.orchestrator.models.ApiResponse;
 import org.camunda.bpm.engine.delegate.DelegateExecution;
 import org.camunda.bpm.engine.delegate.JavaDelegate;
+import org.springframework.core.ParameterizedTypeReference;
+import org.springframework.http.*;
 import org.springframework.web.client.RestTemplate;
 import com.ing.orchestrator.models.ClientDto;
 
@@ -14,11 +16,30 @@ public class CreateClient implements JavaDelegate {
     boolean createClient(ClientDto clientDto) {
         String url = "http://localhost:8010/clients";
         RestTemplate restTemplate = new RestTemplate();
+
         try {
-            ClientDto client = restTemplate.postForObject(url, clientDto, ClientDto.class);
-            return (client != null);
+            HttpHeaders headers = new HttpHeaders();
+            headers.setContentType(MediaType.APPLICATION_JSON);
+
+            HttpEntity<ClientDto> request = new HttpEntity<>(clientDto, headers);
+
+            ResponseEntity<ApiResponse<ClientDto>> response = restTemplate.exchange(
+                    url,
+                    HttpMethod.POST,
+                    request,
+                    new ParameterizedTypeReference<ApiResponse<ClientDto>>() {}
+            );
+
+            ApiResponse<ClientDto> apiResponse = response.getBody();
+
+            if (apiResponse != null && apiResponse.isSuccess()) {
+                return true;
+            } else {
+                System.err.println("Error: " + (apiResponse != null ? apiResponse.getMessage() : "Unknown error"));
+                return false;
+            }
         } catch (Exception e) {
-            System.out.println("Failed to create client: " + e.getMessage() + e.toString());
+            System.err.println("Failed to create client: " + e.getMessage());
             return false;
         }
     }

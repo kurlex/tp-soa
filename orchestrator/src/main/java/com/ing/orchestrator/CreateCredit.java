@@ -15,7 +15,7 @@ import org.springframework.web.client.RestTemplate;
 @Component
 public class CreateCredit implements JavaDelegate {
 
-    boolean createCredit(CreditDto creditDto) {
+    CreditDto createCredit(CreditDto creditDto) {
         String url = "http://localhost:8002/credits";
         RestTemplate restTemplate = new RestTemplate();
         try {
@@ -25,12 +25,14 @@ public class CreateCredit implements JavaDelegate {
 
             ApiResponse<CreditDto> responseBody = responseEntity.getBody();
             if (responseBody != null && responseBody.isSuccess()) {
-                System.out.println("Credit created successfully: " + responseBody.getData().getId());
-                return true;
-            } else
-                return false;
+                return responseBody.getData();
+            } else {
+                System.err.println("Failed to create credit: not success");
+                return null;
+            }
         } catch (Exception e) {
-            return false;
+            System.err.println("Failed to create credit: " + e.getMessage());
+            return null;
         }
     }
 
@@ -42,8 +44,18 @@ public class CreateCredit implements JavaDelegate {
 
         CreditDto creditDto = new CreditDto(cin, amount, durationInMonths);
 
-        boolean creditCreated = createCredit(creditDto);
+        CreditDto credit = createCredit(creditDto);
 
-        delegateExecution.setVariable("creditCreated", creditCreated);
+        if (credit != null) {
+            delegateExecution.setVariable("creditCreated", true);
+            delegateExecution.setVariable("creditId", credit.getId());
+            delegateExecution.setVariable("monthlyPayment", credit.getMonthlyPayment());
+            delegateExecution.setVariable("interest", credit.getInterest());
+            delegateExecution.setVariable("scaleId", credit.getScaleId());
+        }
+        else {
+            delegateExecution.setVariable("creditCreated", false);
+        }
+
     }
 }

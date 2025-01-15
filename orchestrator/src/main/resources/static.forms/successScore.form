@@ -1,0 +1,66 @@
+{
+  "components": [
+    {
+      "text": "# Score",
+      "type": "text",
+      "layout": {
+        "row": "Row_0ck5aoh",
+        "columns": null
+      },
+      "id": "Field_0j5h8vm"
+    },
+    {
+      "label": "Score Id",
+      "type": "textfield",
+      "layout": {
+        "row": "Row_0kzj782",
+        "columns": null
+      },
+      "id": "Field_0qywdlw",
+      "key": "scoreId",
+      "readonly": true
+    },
+    {
+      "label": "Score",
+      "type": "textfield",
+      "layout": {
+        "row": "Row_0kzj782",
+        "columns": null
+      },
+      "id": "Field_01iw6nn",
+      "key": "score",
+      "readonly": true
+    },
+    {
+      "label": "Credit Id",
+      "type": "textfield",
+      "layout": {
+        "row": "Row_0qzujkb",
+        "columns": null
+      },
+      "id": "Field_1wkbu4c",
+      "key": "creditId",
+      "readonly": true
+    },
+    {
+      "label": "Evaluation",
+      "type": "textfield",
+      "layout": {
+        "row": "Row_0qzujkb",
+        "columns": null
+      },
+      "id": "Field_0ger0ll",
+      "key": "evaluation",
+      "readonly": true
+    }
+  ],
+  "type": "default",
+  "id": "successScore",
+  "executionPlatform": "Camunda Cloud",
+  "executionPlatformVersion": "8.6.0",
+  "exporter": {
+    "name": "Camunda Modeler",
+    "version": "5.30.0"
+  },
+  "schemaVersion": 17
+}

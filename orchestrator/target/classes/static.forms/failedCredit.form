@@ -1,0 +1,22 @@
+{
+  "components": [
+    {
+      "text": "# Failed To Create Credit",
+      "type": "text",
+      "layout": {
+        "row": "Row_1ob1nsw",
+        "columns": null
+      },
+      "id": "Field_1dsqpmg"
+    }
+  ],
+  "type": "default",
+  "id": "failedCredit",
+  "executionPlatform": "Camunda Cloud",
+  "executionPlatformVersion": "8.6.0",
+  "exporter": {
+    "name": "Camunda Modeler",
+    "version": "5.30.0"
+  },
+  "schemaVersion": 17
+}

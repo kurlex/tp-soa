@@ -1,0 +1,22 @@
+{
+  "components": [
+    {
+      "text": "# Failed to get score",
+      "type": "text",
+      "layout": {
+        "row": "Row_0u150o8",
+        "columns": null
+      },
+      "id": "Field_1gft0wc"
+    }
+  ],
+  "type": "default",
+  "id": "failedScore",
+  "executionPlatform": "Camunda Cloud",
+  "executionPlatformVersion": "8.6.0",
+  "exporter": {
+    "name": "Camunda Modeler",
+    "version": "5.30.0"
+  },
+  "schemaVersion": 17
+}

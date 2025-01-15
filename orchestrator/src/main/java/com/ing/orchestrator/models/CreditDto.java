@@ -15,6 +15,15 @@ public class CreditDto {
     @JsonProperty("durationInMonths")
     private Integer durationInMonths;
 
+    @JsonProperty("scaleId")
+    private Long scaleId;
+
+    @JsonProperty("interest")
+    private Double interest;
+
+    @JsonProperty("monthlyPayment")
+    private Double monthlyPayment;
+
     // Constructors, Getters, and Setters
     public CreditDto() {}
 
@@ -48,5 +57,17 @@ public class CreditDto {
 
     public void setDurationInMonths(Integer durationInMonths) {
         this.durationInMonths = durationInMonths;
+    }
+
+    public Long getScaleId() {
+        return scaleId;
+    }
+
+    public Double getInterest() {
+        return interest;
+    }
+
+    public Double getMonthlyPayment() {
+        return monthlyPayment;
     }
 }
