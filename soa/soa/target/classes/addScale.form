@@ -21,7 +21,29 @@
       "decimalDigits": 2
     },
     {
-      "label": "Minimum Duration In Months",
+      "label": "Min Amount",
+      "type": "number",
+      "layout": {
+        "row": "Row_0m2bb8l",
+        "columns": null
+      },
+      "id": "Field_1qshg4a",
+      "key": "minimumAmount",
+      "decimalDigits": 0
+    },
+    {
+      "label": "Max Amount",
+      "type": "number",
+      "layout": {
+        "row": "Row_0m2bb8l",
+        "columns": null
+      },
+      "id": "Field_15ejd5s",
+      "key": "maximumAmount",
+      "decimalDigits": 0
+    },
+    {
+      "label": "Min Duration In Months",
       "type": "number",
       "layout": {
         "row": "Row_1ayjotd",
@@ -32,7 +54,7 @@
       "decimalDigits": 0
     },
     {
-      "label": "Maximum Duration In Months",
+      "label": "Max Duration In Months",
       "type": "number",
       "layout": {
         "row": "Row_1ayjotd",
@@ -40,28 +62,6 @@
       },
       "id": "Field_0vfskgd",
       "key": "maximumDurationInMonths",
-      "decimalDigits": 0
-    },
-    {
-      "label": "Minimum Amount",
-      "type": "number",
-      "layout": {
-        "row": "Row_1pdk64v",
-        "columns": null
-      },
-      "id": "Field_1qshg4a",
-      "key": "minimumAmount",
-      "decimalDigits": 0
-    },
-    {
-      "label": "Maximum Amount",
-      "type": "number",
-      "layout": {
-        "row": "Row_1pdk64v",
-        "columns": null
-      },
-      "id": "Field_15ejd5s",
-      "key": "maximumAmount",
       "decimalDigits": 0
     }
   ],
